@@ -1,0 +1,9 @@
+# ডিপেন্ডেন্সি ফোল্ডার (এটি অবশ্যই বাদ দেওয়া উচিত)
+node_modules/
+
+# লক ফাইল
+package-lock.json
+
+# কনফিগ ফাইল (আপনার রিকোয়েস্ট অনুযায়ী)
+package.json
+tsconfig.json
