@@ -1,10 +1,11 @@
 import express, { type Application, type Request, type Response } from "express"
 import { Pool } from 'pg'
+import config from "./config"
 const app: Application = express()
-const port = 5000
+const port = config.port
 app.use(express.json())
 const pool = new Pool({
-     connectionString: "postgresql://neondb_owner:npg_DU0YlmXBAqV8@ep-empty-art-aqy42gck.c-8.us-east-1.aws.neon.tech/neondb?sslmode=require"
+     connectionString: config.connectionString
 })
 // app.use(express.text())
 // app.use(express.urlencoded({ extended: true }))
