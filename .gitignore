@@ -7,3 +7,4 @@ package-lock.json
 # কনফিগ ফাইল (আপনার রিকোয়েস্ট অনুযায়ী)
 package.json
 tsconfig.json
+secratefile.env
