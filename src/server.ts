@@ -107,7 +107,37 @@ app.get('/api/users', async (req: Request, res: Response) => {
      }
 })
 
+// get singles apis
+app.get('/api/users/:id', async (req: Request, res: Response) => {
+     try {
+          const { id } = req.params
+          const result = await pool.query(`
+          SELECT * FROM users  WHERE id=$1
+          `, [id])
+          if (result.rows.length === 0) {
 
+               res.status(404).json({
+                    success: false,
+                    message: "User Not found!",
+                    data: {},
+               });
+
+          }
+          res.status(200).json({
+               success: true,
+               message: 'successfully data retrive',
+               data: result.rows[0]
+          })
+     } catch (error: any) {
+          res.status(500).json({
+               success: false,
+               message: error.message,
+               error: error
+          })
+
+
+     }
+})
 
 app.listen(port, () => {
      console.log(`Example app listening on port ${port}`);
