@@ -15,41 +15,11 @@ app.get('/', (req: Request, res: Response) => {
      });
 });
 
-//create users 
-
+// users 
 app.use('/api/users', userRoute)
 
-//get all apis 
-
-app.get('/api/users', async (req: Request, res: Response) => {
-     try {
-          const result = await pool.query(`
-          SELECT * FROM users 
-          `)
-          if (result.rows.length === 0) {
-
-               res.status(404).json({
-                    success: false,
-                    message: "User Not found!",
-                    data: {},
-               });
-
-          }
-          res.status(200).json({
-               success: true,
-               message: 'successfully data retrive',
-               data: result.rows[0]
-          })
-     } catch (error: any) {
-          res.status(500).json({
-               success: false,
-               message: error.message,
-               error: error
-          })
 
 
-     }
-})
 
 // get singles apis
 app.get('/api/users/:id', async (req: Request, res: Response) => {

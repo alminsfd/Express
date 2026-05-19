@@ -2,11 +2,8 @@ import { pool } from "../../db";
 import type { IUser } from "./user.interface";
 
 
-const insetDataIntoDB = async (payload: IUser) => {
+const insetUserIntoDB = async (payload: IUser) => {
      const { name, email, age, password } = payload
-
-
-
      const result = await pool.query(`
                INSERT INTO users (name, email, age, password)
                VALUES ($1, $2, $3, $4)
@@ -16,7 +13,14 @@ const insetDataIntoDB = async (payload: IUser) => {
 
 }
 
+const getAlluserFromDB = async () => {
+     const result = await pool.query(`
+          SELECT * FROM users 
+          `)
+     return result
+}
 
 export const userService = {
-     insetDataIntoDB,
+     insetUserIntoDB,
+     getAlluserFromDB,
 }
