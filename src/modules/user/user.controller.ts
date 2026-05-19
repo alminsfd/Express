@@ -44,10 +44,11 @@ const getAllUser = async (req: Request, res: Response) => {
                });
 
           }
+          console.log(result);
           res.status(200).json({
                success: true,
                message: 'successfully data retrive',
-               data: result.rows[0]
+               data: result.rows
           })
      } catch (error: any) {
           res.status(500).json({
