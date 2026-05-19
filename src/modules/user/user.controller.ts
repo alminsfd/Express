@@ -104,13 +104,7 @@ const updateUser = async (req: Request, res: Response) => {
                     message: "ID is must be required!"
                });
           }
-          const { name, email, password } = req.body
-          if (!name || !email || !password) {
-               return res.status(400).json({
-                    success: false,
-                    message: "Name, email, and password are required!"
-               });
-          }
+
           const result = await userService.updateUserFromDB(id as string, req.body)
           if (result.rows.length === 0) {
 
