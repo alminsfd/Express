@@ -5,9 +5,6 @@ const app: Application = express()
 app.use(express.json())
 app.use(express.text())
 app.use(express.urlencoded({ extended: true }))
-
-
-
 app.get('/', (req: Request, res: Response) => {
      res.status(200).json({
           message: "Hello developers",
@@ -15,7 +12,7 @@ app.get('/', (req: Request, res: Response) => {
      });
 });
 
-// users 
+// users endponts
 app.use('/api/users', userRoute)
 
 export default app

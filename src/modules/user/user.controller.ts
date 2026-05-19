@@ -137,11 +137,45 @@ const updateUser = async (req: Request, res: Response) => {
      }
 }
 
+const deleteUser = async (req: Request, res: Response) => {
+     try {
+          const { id } = req.params
+          if (!id) {
+               return res.status(400).json({
+                    success: false,
+                    message: "ID is must be required!"
+               });
+          }
+          const result = await userService.deleteUserFormDB(id as string)
+          if (result.rowCount === 0) {
+               res.status(404).json({
+                    success: false,
+                    message: 'user not founds',
+
+               })
+          }
+          res.status(200).json({
+               success: true,
+               message: 'successfully data deleted',
+               data: result.rows[0]
+          })
+     } catch (error: any) {
+          res.status(500).json({
+               success: false,
+               message: error.message,
+               error: error
+          })
+
+
+     }
+}
+
 export const userController = {
 
      createUser,
      getAllUser,
      getSingleUser,
-     updateUser
+     updateUser,
+     deleteUser
 
 }
