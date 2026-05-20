@@ -24,12 +24,12 @@ export const initDB = async () => {
           await pool.query(`
                CREATE TABLE IF NOT EXISTS prolife(
                id SERIAL PRIMARY KEY,
-               user_id INT UNIQUE REFERENCES users(id) DELETE CASCADE,   
+               user_id INT UNIQUE REFERENCES users(id) ON DELETE CASCADE,   
                bio TEXT,
                address TEXT,
                phone VARCHAR(12),
                gender VARCHAR(10),
-               created_at TIMESTAMP DEFAULT NOW()
+               created_at TIMESTAMP DEFAULT NOW(),
                updated_at TIMESTAMP DEFAULT NOW()
                )
                `)
