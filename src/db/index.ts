@@ -21,6 +21,18 @@ export const initDB = async () => {
                     updated_at TIMESTAMP DEFAULT NOW()  -- Typo thik kora hoyeche (update_at -> updated_at)
                )
           `);
+          await pool.query(`
+               CREATE TABLE IF NOT EXISTS prolife(
+               id SERIAL PRIMARY KEY,
+               user_id INT UNIQUE REFERENCES users(id) DELETE CASCADE,   
+               bio TEXT,
+               address TEXT,
+               phone VARCHAR(12),
+               gender VARCHAR(10),
+               created_at TIMESTAMP DEFAULT NOW()
+               updated_at TIMESTAMP DEFAULT NOW()
+               )
+               `)
           console.log("Database table successfully checked/created");
      } catch (err) {
           console.error("Database initialization error:", err);
