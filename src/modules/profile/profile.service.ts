@@ -39,12 +39,45 @@ const profileGetFromDB = async (id: string) => {
 
 
 }
+const profileUpdateFromDB = async (id: string, payload: IProfile) => {
+     const { bio, address, phone, gender } = payload;
+     const result = await pool.query(`
+          
+          UPDATE prolife SET  bio=COALESCE($1,bio), address=COALESCE($2,address) ,phone=COALESCE($3,phone), gender=COALESCE($4,gender)  WHERE  user_id=$5 RETURNING *
+          `, [bio, address, phone, gender, id])
+
+
+     // console.log(result);
+     if (result.rows.length === 0) {
+          throw new Error("This user not exits");
+
+     }
+
+     return result
+
+
+}
+const profileDeleteFromDB = async (id: string) => {
+     const result = await pool.query(`
+          
+          DELETE FROM prolife WHERE user_id=$1
+          `, [id])
+
+     if (result.rowCount === 0) {
+          throw new Error("This user not exits");
+
+     }
+
+     return result
+
+
+}
 
 
 
 export const profileService = {
      profileDataInserIntoDB,
      profileGetFromDB,
-     // profileUpdateFromDB,
-     // profileDeleteFromDB
+     profileUpdateFromDB,
+     profileDeleteFromDB
 }

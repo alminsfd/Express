@@ -6,13 +6,13 @@ const createProfile = async (req: Request, res: Response) => {
      try {
           const result = await profileService.profileDataInserIntoDB(req.body)
           console.log(result);
-          res.status(201).json({
+          return res.status(201).json({
                success: true,
                message: "Profile created successfully!",
                data: result.rows[0],
           })
      } catch (error: any) {
-          res.status(500).json({
+          return res.status(500).json({
                succes: false,
                message: error.message,
                error: error
@@ -27,13 +27,13 @@ const getProfile = async (req: Request, res: Response) => {
           const { id } = req.params
           const result = await profileService.profileGetFromDB(id as string)
           // console.log(result);
-          res.status(201).json({
+          return res.status(201).json({
                success: true,
                message: "Profile retrive successfully!",
                data: result.rows[0],
           })
      } catch (error: any) {
-          res.status(500).json({
+          return res.status(500).json({
                succes: false,
                message: error.message,
                error: error
@@ -42,50 +42,67 @@ const getProfile = async (req: Request, res: Response) => {
      }
 
 }
-// const updateProfile = async (req: Request, res: Response) => {
+const updateProfile = async (req: Request, res: Response) => {
+     try {
+          const { id } = req.params
+          if (!id) {
+               return res.status(404).json({
+                    success: false,
+                    message: "ID must be required",
+                    data: {}
+               })
+          }
+          const result = await profileService.profileUpdateFromDB(id as string, req.body)
+          // console.log(result);
+          return res.status(201).json({
+               success: true,
+               message: "Profile update successfully!",
+               data: result.rows[0],
+          })
+     } catch (error: any) {
+          return res.status(500).json({
+               succes: false,
+               message: error.message,
+               error: error
 
-//      try {
-//           const result = await profileService.profileUpdateFromDB(req.body)
-//           console.log(result);
-//           res.status(201).json({
-//                success: true,
-//                message: "Profile update successfully!",
-//                data: result.rows[0],
-//           })
-//      } catch (error: any) {
-//           res.status(500).json({
-//                succes: false,
-//                message: error.message,
-//                error: error
+          })
+     }
 
-//           })
-//      }
+}
+const deleteProfile = async (req: Request, res: Response) => {
 
-// }
-// const deleteProfile = async (req: Request, res: Response) => {
+     const { id } = req.params
 
-//      try {
-//           const result = await profileService.profileDeleteFromDB(req.body)
-//           console.log(result);
-//           res.status(201).json({
-//                success: true,
-//                message: "Profile delete successfully!",
-//                data: result.rows[0],
-//           })
-//      } catch (error: any) {
-//           res.status(500).json({
-//                succes: false,
-//                message: error.message,
-//                error: error
+     if (!id) {
+          return res.status(404).json({
+               success: false,
+               message: "ID must be required",
+               data: {}
+          })
+     }
 
-//           })
-//      }
+     try {
+          const result = await profileService.profileDeleteFromDB(id as string)
+          // console.log(result);
+          return res.status(201).json({
+               success: true,
+               message: "Profile delete successfully!",
+               data: result.rows[0],
+          })
+     } catch (error: any) {
+          return res.status(500).json({
+               succes: false,
+               message: error.message,
+               error: error
 
-// }
+          })
+     }
+
+}
 
 export const profileController = {
      createProfile,
      getProfile,
-     // updateProfile,
-     // deleteProfile,
+     updateProfile,
+     deleteProfile,
 }
