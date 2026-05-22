@@ -1,0 +1,6 @@
+
+ Method -> GET - Time -> 1779443269559 - URL-> /favicon.ico 
+ Method -> GET - Time -> 1779443389748 - URL-> /products 
+ Method -> GET - Time -> 1779443392117 - URL-> /users 
+ Method -> GET - Time -> 1779443406849 - URL-> /users 
+ Method -> GET - Time -> 1779443468914 - URL-> /users 
