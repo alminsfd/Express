@@ -8,7 +8,8 @@ dotenv.config({
 const config = {
      connectionString: process.env.CONNECTIONSTRING as string,
      port: process.env.PORT,
-     seckey: process.env.SECRETKEY
+     seckey: process.env.SECRETKEY,
+     refreshkey: process.env.REFRESHKEY
 
 }
 

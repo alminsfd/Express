@@ -87,3 +87,23 @@
  Method -> GET - Time -> 1779516231922 - URL-> /api/users 
 
  Method -> GET - Time -> 1779516599132 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779533658102 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779533706993 - URL-> /api/auth/login 
+
+ Method -> GET - Time -> 1779533867391 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779545833479 - URL-> /api/auth/login 
+
+ Method -> POST - Time -> 1779546007486 - URL-> /api/auth/refresh-token 
+
+ Method -> POST - Time -> 1779546701060 - URL-> /api/auth/login 
+
+ Method -> POST - Time -> 1779546793467 - URL-> /api/auth/refresh-token 
+
+ Method -> POST - Time -> 1779548649689 - URL-> /api/auth/refresh-token 
+
+ Method -> GET - Time -> 1779553251875 - URL-> /favicon.ico 
+
+ Method -> GET - Time -> 1779553265598 - URL-> /favicon.ico 

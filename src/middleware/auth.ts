@@ -46,6 +46,13 @@ const auth = (...role: ROLES[]) => {
 
                }
 
+               if (!user.rows[0]?.is_active) {
+                    return res.status(403).json({
+                         success: false,
+                         message: "forbidden access"
+                    })
+               }
+
                req.user = decoded;
 
 

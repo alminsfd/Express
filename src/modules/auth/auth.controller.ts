@@ -4,7 +4,6 @@ import { authService } from "./auth.service";
 
 const loginUser = async (req: Request, res: Response) => {
      try {
-          const result = await authService.loginUserIntoDB(req.body);
           // console.log(result);
           const { email, password } = req.body
           if (!email || !password) {
@@ -14,6 +13,15 @@ const loginUser = async (req: Request, res: Response) => {
                     data: {}
                })
           }
+
+          const result = await authService.loginUserIntoDB(req.body);
+          const { refreshToken } = result
+
+          res.cookie("refreshToken", refreshToken, {
+               secure: false,
+               httpOnly: true,
+               sameSite: "lax"
+          })
 
           return res.status(200).json({
                success: true,
@@ -28,7 +36,26 @@ const loginUser = async (req: Request, res: Response) => {
           });
      }
 };
+const refreshToken = async (req: Request, res: Response) => {
+     try {
+
+          // console.log();
+          const result = await authService.generateFreshToken(req.cookies.refreshToken);
+          return res.status(200).json({
+               success: true,
+               message: "User token generatation  successfully done!  ",
+               // data: result,
+          });
+     } catch (error: any) {
+          return res.status(500).json({
+               success: false,
+               message: error.message,
+               error: error,
+          });
+     }
+};
 
 export const authController = {
      loginUser,
+     refreshToken
 };
