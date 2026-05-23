@@ -4,3 +4,86 @@
  Method -> GET - Time -> 1779443392117 - URL-> /users 
  Method -> GET - Time -> 1779443406849 - URL-> /users 
  Method -> GET - Time -> 1779443468914 - URL-> /users 
+ Method -> GET - Time -> 1779511702247 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779511754078 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779511875534 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512050021 - URL-> //api/users 
+
+ Method -> POST - Time -> 1779512060284 - URL-> //api/users 
+
+ Method -> POST - Time -> 1779512061117 - URL-> //api/users 
+
+ Method -> POST - Time -> 1779512061665 - URL-> //api/users 
+
+ Method -> POST - Time -> 1779512068732 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512485569 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512494674 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512778839 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512825285 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779512858756 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779513097141 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513170117 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513317764 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513396070 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513446563 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513497909 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779513600530 - URL-> /api/auth/login 
+
+ Method -> GET - Time -> 1779513636665 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779513690699 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779513796463 - URL-> /api/auth/login 
+
+ Method -> GET - Time -> 1779514192586 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779514266741 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779514292372 - URL-> /api/auth/login 
+
+ Method -> GET - Time -> 1779514306866 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779514341156 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779514412656 - URL-> /api/users 
+
+ Method -> POST - Time -> 1779515172250 - URL-> /api/auth/login 
+
+ Method -> GET - Time -> 1779515189635 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779515195730 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779515209130 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779515870397 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516125644 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516132020 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516132764 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516141652 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516142579 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516145685 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516231922 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779516599132 - URL-> /api/users 

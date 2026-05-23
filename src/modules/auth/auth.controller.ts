@@ -5,7 +5,7 @@ import { authService } from "./auth.service";
 const loginUser = async (req: Request, res: Response) => {
      try {
           const result = await authService.loginUserIntoDB(req.body);
-          console.log(result);
+          // console.log(result);
           const { email, password } = req.body
           if (!email || !password) {
                return res.status(404).json({

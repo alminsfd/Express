@@ -17,6 +17,7 @@ export const initDB = async () => {
                     password TEXT NOT NULL, -- Password er length oboshshoi besi hote hobe
                     is_active BOOLEAN DEFAULT true,
                     age INT,
+                    role VARCHAR(10) DEFAULT 'user',
                     created_at TIMESTAMP DEFAULT NOW(), -- Typo thik kora hoyeche (creat_at -> created_at)
                     updated_at TIMESTAMP DEFAULT NOW()  -- Typo thik kora hoyeche (update_at -> updated_at)
                )
