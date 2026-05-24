@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { userService } from "./user.service";
+import sendResponse from "../../utility/serverResponse";
 
 
 const createUser = async (req: Request, res: Response) => {
@@ -80,17 +81,27 @@ const getSingleUser = async (req: Request, res: Response) => {
                });
 
           }
-          return res.status(200).json({
-               success: true,
-               message: 'successfully data retrive',
-               data: result.rows[0]
-          })
+
+          sendResponse(res,
+               {
+                    statusCode: 200,
+                    success: true,
+                    message: "Users fetched successfully!",
+                    data: result.rows[0],
+               })
+
+
      } catch (error: any) {
-          return res.status(500).json({
-               success: false,
-               message: error.message,
-               error: error
-          })
+          sendResponse(res,
+               {
+                    statusCode: 500,
+                    success: false,
+                    message: error.message,
+                    error: error,
+               }
+
+          )
+
 
 
      }

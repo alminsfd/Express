@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { authService } from "./auth.service";
+import sendResponse from "../../utility/serverResponse";
 
 
 const loginUser = async (req: Request, res: Response) => {
@@ -23,17 +24,17 @@ const loginUser = async (req: Request, res: Response) => {
                sameSite: "lax"
           })
 
-          return res.status(200).json({
-               success: true,
-               message: "User login successfully!",
-               data: result,
-          });
+               ;
      } catch (error: any) {
-          return res.status(500).json({
-               success: false,
-               message: error.message,
-               error: error,
-          });
+          sendResponse(res,
+               {
+                    statusCode: 500,
+                    success: false,
+                    message: error.message,
+                    error: error,
+               }
+
+          );
      }
 };
 const refreshToken = async (req: Request, res: Response) => {
@@ -41,17 +42,23 @@ const refreshToken = async (req: Request, res: Response) => {
 
           // console.log();
           const result = await authService.generateFreshToken(req.cookies.refreshToken);
-          return res.status(200).json({
-               success: true,
-               message: "User token generatation  successfully done!  ",
-               // data: result,
-          });
+          sendResponse(res,
+               {
+                    statusCode: 200,
+                    success: true,
+                    message: "Users fetched successfully!",
+                    data: result
+               })
      } catch (error: any) {
-          return res.status(500).json({
-               success: false,
-               message: error.message,
-               error: error,
-          });
+          sendResponse(res,
+               {
+                    statusCode: 500,
+                    success: false,
+                    message: error.message,
+                    error: error,
+               }
+
+          );
      }
 };
 

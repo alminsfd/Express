@@ -20,7 +20,6 @@ app.get('/', (req: Request, res: Response) => {
           "authentication": "NextLeveldeveloper"
      });
 });
-
 app.use(
      cors({
           origin: "http://localhost:5000"

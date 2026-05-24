@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import { profileService } from "./profile.service";
+import sendResponse from "../../utility/serverResponse";
 
 const createProfile = async (req: Request, res: Response) => {
 
@@ -27,18 +28,23 @@ const getProfile = async (req: Request, res: Response) => {
           const { id } = req.params
           const result = await profileService.profileGetFromDB(id as string)
           // console.log(result);
-          return res.status(201).json({
-               success: true,
-               message: "Profile retrive successfully!",
-               data: result.rows[0],
-          })
+          sendResponse(res,
+               {
+                    statusCode: 200,
+                    success: true,
+                    message: "Users fetched successfully!",
+                    data: result.rows[0],
+               })
      } catch (error: any) {
-          return res.status(500).json({
-               succes: false,
-               message: error.message,
-               error: error
+          sendResponse(res,
+               {
+                    statusCode: 500,
+                    success: false,
+                    message: error.message,
+                    error: error,
+               }
 
-          })
+          )
      }
 
 }
