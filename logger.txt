@@ -107,3 +107,17 @@
  Method -> GET - Time -> 1779553251875 - URL-> /favicon.ico 
 
  Method -> GET - Time -> 1779553265598 - URL-> /favicon.ico 
+
+ Method -> GET - Time -> 1779623781000 - URL-> /favicon.ico 
+
+ Method -> GET - Time -> 1779623784581 - URL-> /products 
+
+ Method -> GET - Time -> 1779623790697 - URL-> /user/api 
+
+ Method -> GET - Time -> 1779623800768 - URL-> /api/users 
+
+ Method -> GET - Time -> 1779623807528 - URL-> /api/users/1 
+
+ Method -> GET - Time -> 1779623817047 - URL-> /api/users/7 
+
+ Method -> GET - Time -> 1779624379761 - URL-> /api/users/7 
