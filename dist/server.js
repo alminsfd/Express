@@ -673,7 +673,7 @@ app.get("/", (req, res) => {
 });
 app.use(
   cors({
-    origin: "http://localhost:5000"
+    origin: "https://express-server-nine-omega.vercel.app"
   })
 );
 app.use(logger_default);
